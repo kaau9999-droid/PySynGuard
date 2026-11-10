@@ -1,0 +1,60 @@
+{
+  "error_types": [
+    {
+      "id": "missing_colon",
+      "name": "Missing Colon",
+      "description": "Removes the trailing colon from a compound statement header (if, for, while, def, class, else, elif, try, except).",
+      "example_before": "if x > 5:",
+      "example_after": "if x > 5"
+    },
+    {
+      "id": "unmatched_bracket",
+      "name": "Unmatched Bracket/Parenthesis",
+      "description": "Removes a closing bracket, parenthesis, or brace, leaving it unmatched.",
+      "example_before": "print(\"hi\")",
+      "example_after": "print(\"hi\""
+    },
+    {
+      "id": "bad_indentation",
+      "name": "Inconsistent/Bad Indentation",
+      "description": "Removes or corrupts the indentation of a line inside a block, breaking Python's block structure.",
+      "example_before": "    print(x)",
+      "example_after": "print(x)"
+    },
+    {
+      "id": "missing_parenthesis_call",
+      "name": "Missing Parenthesis in Function Call",
+      "description": "Converts a valid function call into Python-2-style syntax by removing the parentheses.",
+      "example_before": "print(\"hi\")",
+      "example_after": "print \"hi\""
+    },
+    {
+      "id": "unterminated_string",
+      "name": "Unterminated String Literal",
+      "description": "Removes the closing quote of a string literal.",
+      "example_before": "x = \"hello\"",
+      "example_after": "x = \"hello"
+    },
+    {
+      "id": "invalid_operator",
+      "name": "Invalid/Malformed Operator",
+      "description": "Inserts an invalid operator combination (e.g. '+*') into an arithmetic expression.",
+      "example_before": "x = 5 + 3",
+      "example_after": "x = 5 +* 3"
+    },
+    {
+      "id": "missing_equals",
+      "name": "Missing Assignment Operator",
+      "description": "Removes the '=' from an assignment statement.",
+      "example_before": "x = 5",
+      "example_after": "x  5"
+    },
+    {
+      "id": "dangling_comma_paren",
+      "name": "Extra Unmatched Closing Bracket",
+      "description": "Adds an extra, unmatched closing bracket/parenthesis at the end of a line.",
+      "example_before": "total = a + b",
+      "example_after": "total = a + b)"
+    }
+  ]
+}

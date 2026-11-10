@@ -1,0 +1,1321 @@
+sample_id,source_file,error_type_id,strategy,ground_truth_has_error,ground_truth_line,parse_success,raw_response,predicted_has_error,predicted_line,predicted_description,correct_detection,correct_localization,provider,model
+S001,sample_01.py,missing_colon,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S001,sample_01.py,missing_colon,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S001,sample_01.py,missing_colon,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S001,sample_01.py,missing_colon,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""missing colon after function definition""
+}",True,1.0,missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S002,sample_01.py,unmatched_bracket,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing parenthesis in function definition""
+}",True,1.0,Missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S002,sample_01.py,unmatched_bracket,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing parenthesis and colon in function definition""
+}",True,1.0,Missing closing parenthesis and colon in function definition,True,True,groq,openai/gpt-oss-120b
+S002,sample_01.py,unmatched_bracket,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing parenthesis in function definition""
+}",True,1.0,Missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S002,sample_01.py,unmatched_bracket,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""missing closing parenthesis in function definition""
+}",True,1.0,missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S003,sample_01.py,bad_indentation,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing indentation for return statement in subtract function""
+}",True,6.0,Missing indentation for return statement in subtract function,True,True,groq,openai/gpt-oss-120b
+S003,sample_01.py,bad_indentation,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing indentation for return statement""
+}",True,6.0,Missing indentation for return statement,True,True,groq,openai/gpt-oss-120b
+S003,sample_01.py,bad_indentation,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing indentation for the function body""
+}",True,6.0,Missing indentation for the function body,True,True,groq,openai/gpt-oss-120b
+S003,sample_01.py,bad_indentation,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""expected an indented block""
+}",True,6.0,expected an indented block,True,True,groq,openai/gpt-oss-120b
+S004,sample_01.py,missing_parenthesis_call,zero_shot,True,10,True,"{
+  ""has_error"": true,
+  ""error_line"": 10,
+  ""error_description"": ""Missing parentheses in print function""
+}",True,10.0,Missing parentheses in print function,True,True,groq,openai/gpt-oss-120b
+S004,sample_01.py,missing_parenthesis_call,few_shot,True,10,True,"{
+  ""has_error"": true,
+  ""error_line"": 10,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,10.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S004,sample_01.py,missing_parenthesis_call,cot,True,10,True,"{
+  ""has_error"": true,
+  ""error_line"": 10,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,10.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S004,sample_01.py,missing_parenthesis_call,role_based,True,10,True,"{
+  ""has_error"": true,
+  ""error_line"": 10,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3 syntax error).""
+}",True,10.0,Missing parentheses in call to 'print' (Python 3 syntax error).,True,True,groq,openai/gpt-oss-120b
+S005,sample_01.py,missing_equals,zero_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing assignment operator '='""
+}",True,9.0,Missing assignment operator '=',True,True,groq,openai/gpt-oss-120b
+S005,sample_01.py,missing_equals,few_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing assignment operator '='""
+}",True,9.0,Missing assignment operator '=',True,True,groq,openai/gpt-oss-120b
+S005,sample_01.py,missing_equals,cot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing assignment operator '='""
+}",True,9.0,Missing assignment operator '=',True,True,groq,openai/gpt-oss-120b
+S005,sample_01.py,missing_equals,role_based,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""invalid syntax""
+}",True,9.0,invalid syntax,True,True,groq,openai/gpt-oss-120b
+S006,sample_01.py,dangling_comma_paren,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,6.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S006,sample_01.py,dangling_comma_paren,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,6.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S006,sample_01.py,dangling_comma_paren,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,6.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S006,sample_01.py,dangling_comma_paren,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""unexpected ')'""
+}",True,6.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S007,sample_02.py,missing_colon,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S007,sample_02.py,missing_colon,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S007,sample_02.py,missing_colon,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S007,sample_02.py,missing_colon,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after function definition""
+}",True,1.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S008,sample_02.py,unmatched_bracket,zero_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis""
+}",True,11.0,Missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S008,sample_02.py,unmatched_bracket,few_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis""
+}",True,11.0,Missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S008,sample_02.py,unmatched_bracket,cot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis""
+}",True,11.0,Missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S008,sample_02.py,unmatched_bracket,role_based,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""missing closing parenthesis""
+}",True,11.0,missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S009,sample_02.py,bad_indentation,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Incorrect indentation; 'print' should be indented under the else block.""
+}",True,7.0,Incorrect indentation; 'print' should be indented under the else block.,True,True,groq,openai/gpt-oss-120b
+S009,sample_02.py,bad_indentation,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Indentation error: 'print' not indented under else block""
+}",True,7.0,Indentation error: 'print' not indented under else block,True,True,groq,openai/gpt-oss-120b
+S009,sample_02.py,bad_indentation,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""else clause is not properly indented to match the preceding if""
+}",True,6.0,else clause is not properly indented to match the preceding if,True,False,groq,openai/gpt-oss-120b
+S009,sample_02.py,bad_indentation,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""expected an indented block""
+}",True,7.0,expected an indented block,True,True,groq,openai/gpt-oss-120b
+S010,sample_02.py,missing_parenthesis_call,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing parentheses in print statement""
+}",True,7.0,Missing parentheses in print statement,True,True,groq,openai/gpt-oss-120b
+S010,sample_02.py,missing_parenthesis_call,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing parentheses in print function call""
+}",True,7.0,Missing parentheses in print function call,True,True,groq,openai/gpt-oss-120b
+S010,sample_02.py,missing_parenthesis_call,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""else without a matching if due to incorrect indentation""
+}",True,6.0,else without a matching if due to incorrect indentation,True,False,groq,openai/gpt-oss-120b
+S010,sample_02.py,missing_parenthesis_call,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,7.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S011,sample_02.py,unterminated_string,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing quotation mark in the string literal on line 3.""
+}",True,3.0,Missing closing quotation mark in the string literal on line 3.,True,True,groq,openai/gpt-oss-120b
+S011,sample_02.py,unterminated_string,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing quote in string literal""
+}",True,3.0,Missing closing quote in string literal,True,True,groq,openai/gpt-oss-120b
+S011,sample_02.py,unterminated_string,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing quote in the string literal on line 3""
+}",True,3.0,Missing closing quote in the string literal on line 3,True,True,groq,openai/gpt-oss-120b
+S011,sample_02.py,unterminated_string,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""unterminated string literal""
+}",True,3.0,unterminated string literal,True,True,groq,openai/gpt-oss-120b
+S012,sample_02.py,dangling_comma_paren,zero_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,11.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S012,sample_02.py,dangling_comma_paren,few_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,11.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S012,sample_02.py,dangling_comma_paren,cot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,11.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S012,sample_02.py,dangling_comma_paren,role_based,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""unexpected ')'""
+}",True,11.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S013,sample_03.py,missing_colon,zero_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon at the end of the while statement""
+}",True,11.0,Missing colon at the end of the while statement,True,True,groq,openai/gpt-oss-120b
+S013,sample_03.py,missing_colon,few_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon after while statement""
+}",True,11.0,Missing colon after while statement,True,True,groq,openai/gpt-oss-120b
+S013,sample_03.py,missing_colon,cot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon at the end of the while statement""
+}",True,11.0,Missing colon at the end of the while statement,True,True,groq,openai/gpt-oss-120b
+S013,sample_03.py,missing_colon,role_based,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""missing colon after while condition""
+}",True,11.0,missing colon after while condition,True,True,groq,openai/gpt-oss-120b
+S014,sample_03.py,unmatched_bracket,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing bracket for the list literal""
+}",True,1.0,Missing closing bracket for the list literal,True,True,groq,openai/gpt-oss-120b
+S014,sample_03.py,unmatched_bracket,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing bracket for list""
+}",True,1.0,Missing closing bracket for list,True,True,groq,openai/gpt-oss-120b
+S014,sample_03.py,unmatched_bracket,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing bracket ']' for the list literal""
+}",True,1.0,Missing closing bracket ']' for the list literal,True,True,groq,openai/gpt-oss-120b
+S014,sample_03.py,unmatched_bracket,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""missing closing bracket""
+}",True,1.0,missing closing bracket,True,True,groq,openai/gpt-oss-120b
+S015,sample_03.py,bad_indentation,zero_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Indentation error: line 5 is not indented inside the for loop""
+}",True,5.0,Indentation error: line 5 is not indented inside the for loop,True,True,groq,openai/gpt-oss-120b
+S015,sample_03.py,bad_indentation,few_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing indentation for the for-loop body""
+}",True,5.0,Missing indentation for the for-loop body,True,True,groq,openai/gpt-oss-120b
+S015,sample_03.py,bad_indentation,cot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""expected an indented block after 'for' statement""
+}",True,5.0,expected an indented block after 'for' statement,True,True,groq,openai/gpt-oss-120b
+S015,sample_03.py,bad_indentation,role_based,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""expected indented block""
+}",True,5.0,expected indented block,True,True,groq,openai/gpt-oss-120b
+S016,sample_03.py,missing_parenthesis_call,zero_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing parentheses in print function call""
+}",True,8.0,Missing parentheses in print function call,True,True,groq,openai/gpt-oss-120b
+S016,sample_03.py,missing_parenthesis_call,few_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing parentheses around print function call""
+}",True,8.0,Missing parentheses around print function call,True,True,groq,openai/gpt-oss-120b
+S016,sample_03.py,missing_parenthesis_call,cot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing parentheses in print statement (invalid syntax)""
+}",True,8.0,Missing parentheses in print statement (invalid syntax),True,True,groq,openai/gpt-oss-120b
+S016,sample_03.py,missing_parenthesis_call,role_based,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,8.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S017,sample_03.py,unterminated_string,zero_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing closing quote in f-string""
+}",True,8.0,Missing closing quote in f-string,True,True,groq,openai/gpt-oss-120b
+S017,sample_03.py,unterminated_string,few_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing closing quote in f-string""
+}",True,8.0,Missing closing quote in f-string,True,True,groq,openai/gpt-oss-120b
+S017,sample_03.py,unterminated_string,cot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Missing closing quote for the f-string, causing a syntax error""
+}",True,8.0,"Missing closing quote for the f-string, causing a syntax error",True,True,groq,openai/gpt-oss-120b
+S017,sample_03.py,unterminated_string,role_based,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""EOL while scanning string literal""
+}",True,8.0,EOL while scanning string literal,True,True,groq,openai/gpt-oss-120b
+S018,sample_03.py,invalid_operator,zero_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""invalid augmented assignment operator '+*='""
+}",True,5.0,invalid augmented assignment operator '+*=',True,True,groq,openai/gpt-oss-120b
+S018,sample_03.py,invalid_operator,few_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Invalid augmented assignment operator '+*='""
+}",True,5.0,Invalid augmented assignment operator '+*=',True,True,groq,openai/gpt-oss-120b
+S018,sample_03.py,invalid_operator,cot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Invalid augmented assignment operator '+*='; should be '+='.""
+}",True,5.0,Invalid augmented assignment operator '+*='; should be '+='.,True,True,groq,openai/gpt-oss-120b
+S018,sample_03.py,invalid_operator,role_based,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""invalid augmented assignment operator""
+}",True,5.0,invalid augmented assignment operator,True,True,groq,openai/gpt-oss-120b
+S019,sample_03.py,dangling_comma_paren,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,7.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S019,sample_03.py,dangling_comma_paren,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,7.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S019,sample_03.py,dangling_comma_paren,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,7.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S019,sample_03.py,dangling_comma_paren,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""unexpected ')'""
+}",True,7.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S020,sample_04.py,missing_colon,zero_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing colon after function definition""
+}",True,9.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S020,sample_04.py,missing_colon,few_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing colon after function definition""
+}",True,9.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S020,sample_04.py,missing_colon,cot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing colon after function definition""
+}",True,9.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S020,sample_04.py,missing_colon,role_based,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""missing colon after function definition""
+}",True,9.0,missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S021,sample_04.py,unmatched_bracket,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing closing parenthesis in function definition""
+}",True,6.0,Missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S021,sample_04.py,unmatched_bracket,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing closing parenthesis and colon in method definition""
+}",True,6.0,Missing closing parenthesis and colon in method definition,True,True,groq,openai/gpt-oss-120b
+S021,sample_04.py,unmatched_bracket,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing closing parenthesis in function definition""
+}",True,6.0,Missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S021,sample_04.py,unmatched_bracket,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""missing closing parenthesis in function definition""
+}",True,6.0,missing closing parenthesis in function definition,True,True,groq,openai/gpt-oss-120b
+S022,sample_04.py,bad_indentation,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Unexpected indent""
+}",True,9.0,Unexpected indent,True,False,groq,openai/gpt-oss-120b
+S022,sample_04.py,bad_indentation,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Unexpected indent; 'def perimeter' is not inside the class definition""
+}",True,9.0,Unexpected indent; 'def perimeter' is not inside the class definition,True,False,groq,openai/gpt-oss-120b
+S022,sample_04.py,bad_indentation,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Unexpected indent""
+}",True,9.0,Unexpected indent,True,False,groq,openai/gpt-oss-120b
+S022,sample_04.py,bad_indentation,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""unexpected indent""
+}",True,9.0,unexpected indent,True,False,groq,openai/gpt-oss-120b
+S023,sample_04.py,missing_parenthesis_call,zero_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in print function call""
+}",True,15.0,Missing parentheses in print function call,True,True,groq,openai/gpt-oss-120b
+S023,sample_04.py,missing_parenthesis_call,few_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in print function""
+}",True,15.0,Missing parentheses in print function,True,True,groq,openai/gpt-oss-120b
+S023,sample_04.py,missing_parenthesis_call,cot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3)""
+}",True,15.0,Missing parentheses in call to 'print' (Python 3),True,True,groq,openai/gpt-oss-120b
+S023,sample_04.py,missing_parenthesis_call,role_based,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,15.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S024,sample_04.py,missing_equals,zero_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing assignment operator '=' after variable name""
+}",True,13.0,Missing assignment operator '=' after variable name,True,True,groq,openai/gpt-oss-120b
+S024,sample_04.py,missing_equals,few_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing assignment operator (=) when creating the Rectangle instance""
+}",True,13.0,Missing assignment operator (=) when creating the Rectangle instance,True,True,groq,openai/gpt-oss-120b
+S024,sample_04.py,missing_equals,cot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing assignment operator '=' between variable name and class instantiation""
+}",True,13.0,Missing assignment operator '=' between variable name and class instantiation,True,True,groq,openai/gpt-oss-120b
+S024,sample_04.py,missing_equals,role_based,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""invalid syntax""
+}",True,13.0,invalid syntax,True,True,groq,openai/gpt-oss-120b
+S025,sample_04.py,dangling_comma_paren,zero_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,15.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S025,sample_04.py,dangling_comma_paren,few_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Extra closing parenthesis in the print statement""
+}",True,15.0,Extra closing parenthesis in the print statement,True,True,groq,openai/gpt-oss-120b
+S025,sample_04.py,dangling_comma_paren,cot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,15.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S025,sample_04.py,dangling_comma_paren,role_based,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""unexpected ')'""
+}",True,15.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S026,sample_05.py,missing_colon,zero_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Missing colon after try statement""
+}",True,2.0,Missing colon after try statement,True,True,groq,openai/gpt-oss-120b
+S026,sample_05.py,missing_colon,few_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Missing colon after try statement""
+}",True,2.0,Missing colon after try statement,True,True,groq,openai/gpt-oss-120b
+S026,sample_05.py,missing_colon,cot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Missing colon after try statement""
+}",True,2.0,Missing colon after try statement,True,True,groq,openai/gpt-oss-120b
+S026,sample_05.py,missing_colon,role_based,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""missing colon after try""
+}",True,2.0,missing colon after try,True,True,groq,openai/gpt-oss-120b
+S027,sample_05.py,unmatched_bracket,zero_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing parenthesis in function call""
+}",True,13.0,Missing closing parenthesis in function call,True,True,groq,openai/gpt-oss-120b
+S027,sample_05.py,unmatched_bracket,few_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing parenthesis""
+}",True,13.0,Missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S027,sample_05.py,unmatched_bracket,cot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing parenthesis""
+}",True,13.0,Missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S027,sample_05.py,unmatched_bracket,role_based,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""missing closing parenthesis""
+}",True,13.0,missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S028,sample_05.py,bad_indentation,zero_shot,True,7,True,"{
+  ""has_error"": false,
+  ""error_line"": null,
+  ""error_description"": """"
+}",False,,,False,False,groq,openai/gpt-oss-120b
+S028,sample_05.py,bad_indentation,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Mis-indented else clause; else must be indented to match the try block""
+}",True,7.0,Mis-indented else clause; else must be indented to match the try block,True,True,groq,openai/gpt-oss-120b
+S028,sample_05.py,bad_indentation,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Incorrect indentation for else clause""
+}",True,7.0,Incorrect indentation for else clause,True,True,groq,openai/gpt-oss-120b
+S028,sample_05.py,bad_indentation,role_based,True,7,True,"{
+  ""has_error"": false,
+  ""error_line"": null,
+  ""error_description"": """"
+}",False,,,False,False,groq,openai/gpt-oss-120b
+S029,sample_05.py,missing_parenthesis_call,zero_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing parentheses in print statement (Python 3 syntax error)""
+}",True,13.0,Missing parentheses in print statement (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S029,sample_05.py,missing_parenthesis_call,few_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing parentheses in print function call""
+}",True,13.0,Missing parentheses in print function call,True,True,groq,openai/gpt-oss-120b
+S029,sample_05.py,missing_parenthesis_call,cot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3 syntax error)""
+}",True,13.0,Missing parentheses in call to 'print' (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S029,sample_05.py,missing_parenthesis_call,role_based,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,13.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S030,sample_05.py,unterminated_string,zero_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quotation mark in the string literal on line 5.""
+}",True,5.0,Missing closing quotation mark in the string literal on line 5.,True,True,groq,openai/gpt-oss-120b
+S030,sample_05.py,unterminated_string,few_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quote in string literal""
+}",True,5.0,Missing closing quote in string literal,True,True,groq,openai/gpt-oss-120b
+S030,sample_05.py,unterminated_string,cot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quote in string literal""
+}",True,5.0,Missing closing quote in string literal,True,True,groq,openai/gpt-oss-120b
+S030,sample_05.py,unterminated_string,role_based,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""unterminated string literal""
+}",True,5.0,unterminated string literal,True,True,groq,openai/gpt-oss-120b
+S031,sample_05.py,missing_equals,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing '=' operator in assignment statement""
+}",True,3.0,Missing '=' operator in assignment statement,True,True,groq,openai/gpt-oss-120b
+S031,sample_05.py,missing_equals,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing assignment operator '=' in the expression""
+}",True,3.0,Missing assignment operator '=' in the expression,True,True,groq,openai/gpt-oss-120b
+S031,sample_05.py,missing_equals,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing assignment operator '=' in statement""
+}",True,3.0,Missing assignment operator '=' in statement,True,True,groq,openai/gpt-oss-120b
+S031,sample_05.py,missing_equals,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""invalid syntax: missing assignment operator""
+}",True,3.0,invalid syntax: missing assignment operator,True,True,groq,openai/gpt-oss-120b
+S032,sample_05.py,dangling_comma_paren,zero_shot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,14.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S032,sample_05.py,dangling_comma_paren,few_shot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Extra closing parenthesis causing a syntax error""
+}",True,14.0,Extra closing parenthesis causing a syntax error,True,True,groq,openai/gpt-oss-120b
+S032,sample_05.py,dangling_comma_paren,cot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,14.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S032,sample_05.py,dangling_comma_paren,role_based,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""unexpected ')'""
+}",True,14.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S033,sample_06.py,missing_colon,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing colon at end of for statement""
+}",True,6.0,Missing colon at end of for statement,True,True,groq,openai/gpt-oss-120b
+S033,sample_06.py,missing_colon,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing colon after for statement""
+}",True,6.0,Missing colon after for statement,True,True,groq,openai/gpt-oss-120b
+S033,sample_06.py,missing_colon,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing colon at end of for statement""
+}",True,6.0,Missing colon at end of for statement,True,True,groq,openai/gpt-oss-120b
+S033,sample_06.py,missing_colon,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing colon after for statement""
+}",True,6.0,Missing colon after for statement,True,True,groq,openai/gpt-oss-120b
+S034,sample_06.py,unmatched_bracket,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing brace '}' in dictionary literal""
+}",True,1.0,Missing closing brace '}' in dictionary literal,True,True,groq,openai/gpt-oss-120b
+S034,sample_06.py,unmatched_bracket,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing brace for dictionary literal""
+}",True,1.0,Missing closing brace for dictionary literal,True,True,groq,openai/gpt-oss-120b
+S034,sample_06.py,unmatched_bracket,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing brace '}' for dictionary literal""
+}",True,1.0,Missing closing brace '}' for dictionary literal,True,True,groq,openai/gpt-oss-120b
+S034,sample_06.py,unmatched_bracket,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""missing closing '}' in dict literal""
+}",True,3.0,missing closing '}' in dict literal,True,False,groq,openai/gpt-oss-120b
+S035,sample_06.py,bad_indentation,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing indentation for the loop body""
+}",True,7.0,Missing indentation for the loop body,True,True,groq,openai/gpt-oss-120b
+S035,sample_06.py,bad_indentation,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing indentation for the loop body""
+}",True,7.0,Missing indentation for the loop body,True,True,groq,openai/gpt-oss-120b
+S035,sample_06.py,bad_indentation,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing indentation for the loop body""
+}",True,7.0,Missing indentation for the loop body,True,True,groq,openai/gpt-oss-120b
+S035,sample_06.py,bad_indentation,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""expected an indented block""
+}",True,7.0,expected an indented block,True,True,groq,openai/gpt-oss-120b
+S036,sample_06.py,missing_parenthesis_call,zero_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing parentheses in print function""
+}",True,9.0,Missing parentheses in print function,True,True,groq,openai/gpt-oss-120b
+S036,sample_06.py,missing_parenthesis_call,few_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing parentheses in print statement""
+}",True,9.0,Missing parentheses in print statement,True,True,groq,openai/gpt-oss-120b
+S036,sample_06.py,missing_parenthesis_call,cot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3 syntax error)""
+}",True,9.0,Missing parentheses in call to 'print' (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S036,sample_06.py,missing_parenthesis_call,role_based,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,9.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S037,sample_06.py,unterminated_string,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing quote for the key \""Omar\"" in the dictionary literal.""
+}",True,1.0,"Missing closing quote for the key ""Omar"" in the dictionary literal.",True,True,groq,openai/gpt-oss-120b
+S037,sample_06.py,unterminated_string,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing quote for the key \""Omar\"" in the dictionary""
+}",True,1.0,"Missing closing quote for the key ""Omar"" in the dictionary",True,True,groq,openai/gpt-oss-120b
+S037,sample_06.py,unterminated_string,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing closing quote for the key \""Omar\"" causing a syntax error""
+}",True,1.0,"Missing closing quote for the key ""Omar"" causing a syntax error",True,True,groq,openai/gpt-oss-120b
+S037,sample_06.py,unterminated_string,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""unterminated string literal""
+}",True,1.0,unterminated string literal,True,True,groq,openai/gpt-oss-120b
+S038,sample_06.py,missing_equals,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing assignment operator '=' after variable name""
+}",True,3.0,Missing assignment operator '=' after variable name,True,True,groq,openai/gpt-oss-120b
+S038,sample_06.py,missing_equals,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing '=' in assignment statement""
+}",True,3.0,Missing '=' in assignment statement,True,True,groq,openai/gpt-oss-120b
+S038,sample_06.py,missing_equals,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing '=' operator in assignment""
+}",True,3.0,Missing '=' operator in assignment,True,True,groq,openai/gpt-oss-120b
+S038,sample_06.py,missing_equals,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""missing '=' in assignment""
+}",True,3.0,missing '=' in assignment,True,True,groq,openai/gpt-oss-120b
+S039,sample_06.py,dangling_comma_paren,zero_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis at the end of the dictionary comprehension""
+}",True,4.0,Extra closing parenthesis at the end of the dictionary comprehension,True,True,groq,openai/gpt-oss-120b
+S039,sample_06.py,dangling_comma_paren,few_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis at the end of the line""
+}",True,4.0,Extra closing parenthesis at the end of the line,True,True,groq,openai/gpt-oss-120b
+S039,sample_06.py,dangling_comma_paren,cot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,4.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S039,sample_06.py,dangling_comma_paren,role_based,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""unexpected ')'""
+}",True,4.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S040,sample_07.py,missing_colon,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing colon after the for statement""
+}",True,7.0,Missing colon after the for statement,True,True,groq,openai/gpt-oss-120b
+S040,sample_07.py,missing_colon,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing colon after for statement""
+}",True,7.0,Missing colon after for statement,True,True,groq,openai/gpt-oss-120b
+S040,sample_07.py,missing_colon,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing colon after the for statement""
+}",True,7.0,Missing colon after the for statement,True,True,groq,openai/gpt-oss-120b
+S040,sample_07.py,missing_colon,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""missing colon after for statement""
+}",True,7.0,missing colon after for statement,True,True,groq,openai/gpt-oss-120b
+S041,sample_07.py,unmatched_bracket,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in kwargs.items() call""
+}",True,7.0,Missing closing parenthesis in kwargs.items() call,True,True,groq,openai/gpt-oss-120b
+S041,sample_07.py,unmatched_bracket,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in kwargs.items() call""
+}",True,7.0,Missing closing parenthesis in kwargs.items() call,True,True,groq,openai/gpt-oss-120b
+S041,sample_07.py,unmatched_bracket,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in kwargs.items() call""
+}",True,7.0,Missing closing parenthesis in kwargs.items() call,True,True,groq,openai/gpt-oss-120b
+S041,sample_07.py,unmatched_bracket,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""invalid syntax: missing ')' after kwargs.items""
+}",True,7.0,invalid syntax: missing ')' after kwargs.items,True,True,groq,openai/gpt-oss-120b
+S042,sample_07.py,bad_indentation,zero_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Missing indentation for the function body""
+}",True,2.0,Missing indentation for the function body,True,True,groq,openai/gpt-oss-120b
+S042,sample_07.py,bad_indentation,few_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Missing indentation for function body""
+}",True,2.0,Missing indentation for function body,True,True,groq,openai/gpt-oss-120b
+S042,sample_07.py,bad_indentation,cot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""expected an indented block after function definition""
+}",True,2.0,expected an indented block after function definition,True,True,groq,openai/gpt-oss-120b
+S042,sample_07.py,bad_indentation,role_based,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""expected indented block""
+}",True,2.0,expected indented block,True,True,groq,openai/gpt-oss-120b
+S043,sample_07.py,missing_parenthesis_call,zero_shot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,14.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S043,sample_07.py,missing_parenthesis_call,few_shot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Missing parentheses in print function call""
+}",True,14.0,Missing parentheses in print function call,True,True,groq,openai/gpt-oss-120b
+S043,sample_07.py,missing_parenthesis_call,cot,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3)""
+}",True,14.0,Missing parentheses in call to 'print' (Python 3),True,True,groq,openai/gpt-oss-120b
+S043,sample_07.py,missing_parenthesis_call,role_based,True,14,True,"{
+  ""has_error"": true,
+  ""error_line"": 14,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,14.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S044,sample_07.py,unterminated_string,zero_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing quote for the string literal \""Hi\""""
+}",True,13.0,"Missing closing quote for the string literal ""Hi""",True,True,groq,openai/gpt-oss-120b
+S044,sample_07.py,unterminated_string,few_shot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing quote for string literal""
+}",True,13.0,Missing closing quote for string literal,True,True,groq,openai/gpt-oss-120b
+S044,sample_07.py,unterminated_string,cot,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""Missing closing quote for the string literal \""Hi\""""
+}",True,13.0,"Missing closing quote for the string literal ""Hi""",True,True,groq,openai/gpt-oss-120b
+S044,sample_07.py,unterminated_string,role_based,True,13,True,"{
+  ""has_error"": true,
+  ""error_line"": 13,
+  ""error_description"": ""unterminated string literal""
+}",True,13.0,unterminated string literal,True,True,groq,openai/gpt-oss-120b
+S045,sample_07.py,invalid_operator,zero_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""invalid augmented assignment operator '+*='""
+}",True,8.0,invalid augmented assignment operator '+*=',True,True,groq,openai/gpt-oss-120b
+S045,sample_07.py,invalid_operator,few_shot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Invalid augmented assignment operator '+*='""
+}",True,8.0,Invalid augmented assignment operator '+*=',True,True,groq,openai/gpt-oss-120b
+S045,sample_07.py,invalid_operator,cot,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""Invalid augmented assignment operator '+*='; should be '+='.""
+}",True,8.0,Invalid augmented assignment operator '+*='; should be '+='.,True,True,groq,openai/gpt-oss-120b
+S045,sample_07.py,invalid_operator,role_based,True,8,True,"{
+  ""has_error"": true,
+  ""error_line"": 8,
+  ""error_description"": ""invalid syntax near '+*='""
+}",True,8.0,invalid syntax near '+*=',True,True,groq,openai/gpt-oss-120b
+S046,sample_07.py,missing_equals,zero_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing assignment operator; should be 'total = sum(args)'.""
+}",True,6.0,Missing assignment operator; should be 'total = sum(args)'.,True,True,groq,openai/gpt-oss-120b
+S046,sample_07.py,missing_equals,few_shot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing assignment operator '=' in total = sum(args)""
+}",True,6.0,Missing assignment operator '=' in total = sum(args),True,True,groq,openai/gpt-oss-120b
+S046,sample_07.py,missing_equals,cot,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""Missing assignment operator '=' before sum(args) on line 6""
+}",True,6.0,Missing assignment operator '=' before sum(args) on line 6,True,True,groq,openai/gpt-oss-120b
+S046,sample_07.py,missing_equals,role_based,True,6,True,"{
+  ""has_error"": true,
+  ""error_line"": 6,
+  ""error_description"": ""invalid syntax""
+}",True,6.0,invalid syntax,True,True,groq,openai/gpt-oss-120b
+S047,sample_07.py,dangling_comma_paren,zero_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,2.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S047,sample_07.py,dangling_comma_paren,few_shot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,2.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S047,sample_07.py,dangling_comma_paren,cot,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""Extra closing parenthesis in return statement""
+}",True,2.0,Extra closing parenthesis in return statement,True,True,groq,openai/gpt-oss-120b
+S047,sample_07.py,dangling_comma_paren,role_based,True,2,True,"{
+  ""has_error"": true,
+  ""error_line"": 2,
+  ""error_description"": ""unexpected ')'""
+}",True,2.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S048,sample_08.py,missing_colon,zero_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon after function definition""
+}",True,11.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S048,sample_08.py,missing_colon,few_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon after function definition""
+}",True,11.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S048,sample_08.py,missing_colon,cot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon at end of function definition""
+}",True,11.0,Missing colon at end of function definition,True,True,groq,openai/gpt-oss-120b
+S048,sample_08.py,missing_colon,role_based,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing colon after function definition""
+}",True,11.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S049,sample_08.py,unmatched_bracket,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing parenthesis in the print statement.""
+}",True,3.0,Missing closing parenthesis in the print statement.,True,True,groq,openai/gpt-oss-120b
+S049,sample_08.py,unmatched_bracket,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing parenthesis in print statement""
+}",True,3.0,Missing closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S049,sample_08.py,unmatched_bracket,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing closing parenthesis in the print statement.""
+}",True,3.0,Missing closing parenthesis in the print statement.,True,True,groq,openai/gpt-oss-120b
+S049,sample_08.py,unmatched_bracket,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""missing closing parenthesis""
+}",True,3.0,missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S050,sample_08.py,bad_indentation,zero_shot,True,12,True,"{
+  ""has_error"": true,
+  ""error_line"": 12,
+  ""error_description"": ""Indentation error: return statement not indented inside function""
+}",True,12.0,Indentation error: return statement not indented inside function,True,True,groq,openai/gpt-oss-120b
+S050,sample_08.py,bad_indentation,few_shot,True,12,True,"{
+  ""has_error"": true,
+  ""error_line"": 12,
+  ""error_description"": ""Indentation error: return statement not indented inside function""
+}",True,12.0,Indentation error: return statement not indented inside function,True,True,groq,openai/gpt-oss-120b
+S050,sample_08.py,bad_indentation,cot,True,12,True,"{
+  ""has_error"": true,
+  ""error_line"": 12,
+  ""error_description"": ""Indentation error: expected indented block after function definition""
+}",True,12.0,Indentation error: expected indented block after function definition,True,True,groq,openai/gpt-oss-120b
+S050,sample_08.py,bad_indentation,role_based,True,12,True,"{
+  ""has_error"": true,
+  ""error_line"": 12,
+  ""error_description"": ""expected an indented block""
+}",True,12.0,expected an indented block,True,True,groq,openai/gpt-oss-120b
+S051,sample_08.py,missing_parenthesis_call,zero_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3 requires print as a function).""
+}",True,15.0,Missing parentheses in call to 'print' (Python 3 requires print as a function).,True,True,groq,openai/gpt-oss-120b
+S051,sample_08.py,missing_parenthesis_call,few_shot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,15.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S051,sample_08.py,missing_parenthesis_call,cot,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in print statement""
+}",True,15.0,Missing parentheses in print statement,True,True,groq,openai/gpt-oss-120b
+S051,sample_08.py,missing_parenthesis_call,role_based,True,15,True,"{
+  ""has_error"": true,
+  ""error_line"": 15,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,15.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S052,sample_08.py,unterminated_string,zero_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quote in the string literal on line 5.""
+}",True,5.0,Missing closing quote in the string literal on line 5.,True,True,groq,openai/gpt-oss-120b
+S052,sample_08.py,unterminated_string,few_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quotation mark in string literal""
+}",True,5.0,Missing closing quotation mark in string literal,True,True,groq,openai/gpt-oss-120b
+S052,sample_08.py,unterminated_string,cot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing closing quote in the string literal on line 5""
+}",True,5.0,Missing closing quote in the string literal on line 5,True,True,groq,openai/gpt-oss-120b
+S052,sample_08.py,unterminated_string,role_based,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""EOL while scanning string literal""
+}",True,5.0,EOL while scanning string literal,True,True,groq,openai/gpt-oss-120b
+S053,sample_08.py,missing_equals,zero_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Missing '=' operator in assignment to result""
+}",True,4.0,Missing '=' operator in assignment to result,True,True,groq,openai/gpt-oss-120b
+S053,sample_08.py,missing_equals,few_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Missing '=' operator in assignment to result""
+}",True,4.0,Missing '=' operator in assignment to result,True,True,groq,openai/gpt-oss-120b
+S053,sample_08.py,missing_equals,cot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Missing assignment operator '=' after 'result'""
+}",True,4.0,Missing assignment operator '=' after 'result',True,True,groq,openai/gpt-oss-120b
+S053,sample_08.py,missing_equals,role_based,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""invalid syntax""
+}",True,4.0,invalid syntax,True,True,groq,openai/gpt-oss-120b
+S054,sample_08.py,dangling_comma_paren,zero_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis causing a syntax error""
+}",True,4.0,Extra closing parenthesis causing a syntax error,True,True,groq,openai/gpt-oss-120b
+S054,sample_08.py,dangling_comma_paren,few_shot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis causing a syntax error""
+}",True,4.0,Extra closing parenthesis causing a syntax error,True,True,groq,openai/gpt-oss-120b
+S054,sample_08.py,dangling_comma_paren,cot,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""Extra closing parenthesis""
+}",True,4.0,Extra closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S054,sample_08.py,dangling_comma_paren,role_based,True,4,True,"{
+  ""has_error"": true,
+  ""error_line"": 4,
+  ""error_description"": ""unexpected ')' causing mismatched parentheses""
+}",True,4.0,unexpected ')' causing mismatched parentheses,True,True,groq,openai/gpt-oss-120b
+S055,sample_09.py,missing_colon,zero_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after class definition""
+}",True,1.0,Missing colon after class definition,True,True,groq,openai/gpt-oss-120b
+S055,sample_09.py,missing_colon,few_shot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after class definition""
+}",True,1.0,Missing colon after class definition,True,True,groq,openai/gpt-oss-120b
+S055,sample_09.py,missing_colon,cot,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after class definition""
+}",True,1.0,Missing colon after class definition,True,True,groq,openai/gpt-oss-120b
+S055,sample_09.py,missing_colon,role_based,True,1,True,"{
+  ""has_error"": true,
+  ""error_line"": 1,
+  ""error_description"": ""Missing colon after class definition""
+}",True,1.0,Missing colon after class definition,True,True,groq,openai/gpt-oss-120b
+S056,sample_09.py,unmatched_bracket,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in the print statement""
+}",True,7.0,Missing closing parenthesis in the print statement,True,True,groq,openai/gpt-oss-120b
+S056,sample_09.py,unmatched_bracket,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in print statement""
+}",True,7.0,Missing closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S056,sample_09.py,unmatched_bracket,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing parenthesis in print statement""
+}",True,7.0,Missing closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S056,sample_09.py,unmatched_bracket,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""missing closing parenthesis""
+}",True,7.0,missing closing parenthesis,True,True,groq,openai/gpt-oss-120b
+S057,sample_09.py,bad_indentation,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Indentation error: __exit__ method body is not indented""
+}",True,7.0,Indentation error: __exit__ method body is not indented,True,True,groq,openai/gpt-oss-120b
+S057,sample_09.py,bad_indentation,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Indentation error: missing indentation for the __exit__ method body""
+}",True,7.0,Indentation error: missing indentation for the __exit__ method body,True,True,groq,openai/gpt-oss-120b
+S057,sample_09.py,bad_indentation,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Indentation error: method body not indented""
+}",True,7.0,Indentation error: method body not indented,True,True,groq,openai/gpt-oss-120b
+S057,sample_09.py,bad_indentation,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""expected an indented block""
+}",True,7.0,expected an indented block,True,True,groq,openai/gpt-oss-120b
+S058,sample_09.py,missing_parenthesis_call,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing parentheses in print statement (Python 3 requires print())""
+}",True,3.0,Missing parentheses in print statement (Python 3 requires print()),True,True,groq,openai/gpt-oss-120b
+S058,sample_09.py,missing_parenthesis_call,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing parentheses in print statement""
+}",True,3.0,Missing parentheses in print statement,True,True,groq,openai/gpt-oss-120b
+S058,sample_09.py,missing_parenthesis_call,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing parentheses in print statement (Python 3 syntax error)""
+}",True,3.0,Missing parentheses in print statement (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S058,sample_09.py,missing_parenthesis_call,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,3.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S059,sample_09.py,unterminated_string,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing quotation mark in the string literal""
+}",True,7.0,Missing closing quotation mark in the string literal,True,True,groq,openai/gpt-oss-120b
+S059,sample_09.py,unterminated_string,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing quote in string literal""
+}",True,7.0,Missing closing quote in string literal,True,True,groq,openai/gpt-oss-120b
+S059,sample_09.py,unterminated_string,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing closing quote in the string literal on line 7""
+}",True,7.0,Missing closing quote in the string literal on line 7,True,True,groq,openai/gpt-oss-120b
+S059,sample_09.py,unterminated_string,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""unterminated string literal""
+}",True,7.0,unterminated string literal,True,True,groq,openai/gpt-oss-120b
+S060,sample_09.py,dangling_comma_paren,zero_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Extra closing parenthesis in print statement""
+}",True,3.0,Extra closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S060,sample_09.py,dangling_comma_paren,few_shot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Extra closing parenthesis in print statement""
+}",True,3.0,Extra closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S060,sample_09.py,dangling_comma_paren,cot,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""Extra closing parenthesis in print statement""
+}",True,3.0,Extra closing parenthesis in print statement,True,True,groq,openai/gpt-oss-120b
+S060,sample_09.py,dangling_comma_paren,role_based,True,3,True,"{
+  ""has_error"": true,
+  ""error_line"": 3,
+  ""error_description"": ""unexpected ')'""
+}",True,3.0,unexpected ')',True,True,groq,openai/gpt-oss-120b
+S061,sample_10.py,missing_colon,zero_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing colon after function definition""
+}",True,5.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S061,sample_10.py,missing_colon,few_shot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing colon after function definition""
+}",True,5.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S061,sample_10.py,missing_colon,cot,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""Missing colon after function definition""
+}",True,5.0,Missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S061,sample_10.py,missing_colon,role_based,True,5,True,"{
+  ""has_error"": true,
+  ""error_line"": 5,
+  ""error_description"": ""missing colon after function definition""
+}",True,5.0,missing colon after function definition,True,True,groq,openai/gpt-oss-120b
+S062,sample_10.py,unmatched_bracket,zero_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis for round() call""
+}",True,11.0,Missing closing parenthesis for round() call,True,True,groq,openai/gpt-oss-120b
+S062,sample_10.py,unmatched_bracket,few_shot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis for round function""
+}",True,11.0,Missing closing parenthesis for round function,True,True,groq,openai/gpt-oss-120b
+S062,sample_10.py,unmatched_bracket,cot,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis for round function call""
+}",True,11.0,Missing closing parenthesis for round function call,True,True,groq,openai/gpt-oss-120b
+S062,sample_10.py,unmatched_bracket,role_based,True,11,True,"{
+  ""has_error"": true,
+  ""error_line"": 11,
+  ""error_description"": ""Missing closing parenthesis in function call""
+}",True,11.0,Missing closing parenthesis in function call,True,True,groq,openai/gpt-oss-120b
+S063,sample_10.py,missing_parenthesis_call,zero_shot,True,16,True,"{
+  ""has_error"": true,
+  ""error_line"": 16,
+  ""error_description"": ""Missing parentheses in print statement (Python 3 syntax error)""
+}",True,16.0,Missing parentheses in print statement (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S063,sample_10.py,missing_parenthesis_call,few_shot,True,16,True,"{
+  ""has_error"": true,
+  ""error_line"": 16,
+  ""error_description"": ""Missing parentheses for print function in Python 3""
+}",True,16.0,Missing parentheses for print function in Python 3,True,True,groq,openai/gpt-oss-120b
+S063,sample_10.py,missing_parenthesis_call,cot,True,16,True,"{
+  ""has_error"": true,
+  ""error_line"": 16,
+  ""error_description"": ""Missing parentheses in call to 'print' (Python 3 syntax error)""
+}",True,16.0,Missing parentheses in call to 'print' (Python 3 syntax error),True,True,groq,openai/gpt-oss-120b
+S063,sample_10.py,missing_parenthesis_call,role_based,True,16,True,"{
+  ""has_error"": true,
+  ""error_line"": 16,
+  ""error_description"": ""Missing parentheses in call to 'print'""
+}",True,16.0,Missing parentheses in call to 'print',True,True,groq,openai/gpt-oss-120b
+S064,sample_10.py,unterminated_string,zero_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing closing quote for the key string in the dictionary.""
+}",True,9.0,Missing closing quote for the key string in the dictionary.,True,True,groq,openai/gpt-oss-120b
+S064,sample_10.py,unterminated_string,few_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing closing quote for dictionary key""
+}",True,9.0,Missing closing quote for dictionary key,True,True,groq,openai/gpt-oss-120b
+S064,sample_10.py,unterminated_string,cot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Missing closing quote in dictionary key, causing a syntax error""
+}",True,9.0,"Missing closing quote in dictionary key, causing a syntax error",True,True,groq,openai/gpt-oss-120b
+S064,sample_10.py,unterminated_string,role_based,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""EOL while scanning string literal""
+}",True,9.0,EOL while scanning string literal,True,True,groq,openai/gpt-oss-120b
+S065,sample_10.py,missing_equals,zero_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing assignment operator '=' in circumference calculation""
+}",True,7.0,Missing assignment operator '=' in circumference calculation,True,True,groq,openai/gpt-oss-120b
+S065,sample_10.py,missing_equals,few_shot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing assignment operator '=' for circumference""
+}",True,7.0,Missing assignment operator '=' for circumference,True,True,groq,openai/gpt-oss-120b
+S065,sample_10.py,missing_equals,cot,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""Missing assignment operator '=' for circumference""
+}",True,7.0,Missing assignment operator '=' for circumference,True,True,groq,openai/gpt-oss-120b
+S065,sample_10.py,missing_equals,role_based,True,7,True,"{
+  ""has_error"": true,
+  ""error_line"": 7,
+  ""error_description"": ""invalid syntax""
+}",True,7.0,invalid syntax,True,True,groq,openai/gpt-oss-120b
+S066,sample_10.py,dangling_comma_paren,zero_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Extra closing parenthesis in dict literal""
+}",True,9.0,Extra closing parenthesis in dict literal,True,True,groq,openai/gpt-oss-120b
+S066,sample_10.py,dangling_comma_paren,few_shot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Extra closing parenthesis in dictionary literal""
+}",True,9.0,Extra closing parenthesis in dictionary literal,True,True,groq,openai/gpt-oss-120b
+S066,sample_10.py,dangling_comma_paren,cot,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""Extra closing parenthesis after radius causing a syntax error""
+}",True,9.0,Extra closing parenthesis after radius causing a syntax error,True,True,groq,openai/gpt-oss-120b
+S066,sample_10.py,dangling_comma_paren,role_based,True,9,True,"{
+  ""has_error"": true,
+  ""error_line"": 9,
+  ""error_description"": ""invalid syntax""
+}",True,9.0,invalid syntax,True,True,groq,openai/gpt-oss-120b

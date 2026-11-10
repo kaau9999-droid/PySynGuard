@@ -1,0 +1,5 @@
+strategy,n_samples,accuracy,precision,recall,f1_score,localization_accuracy,false_positive_rate,parse_failures
+cot,66,1.0,1.0,1.0,1.0,0.9545,0.0,0
+few_shot,66,1.0,1.0,1.0,1.0,0.9848,0.0,0
+role_based,66,0.9848,1.0,0.9848,0.9924,0.9692,0.0,0
+zero_shot,66,0.9848,1.0,0.9848,0.9924,0.9846,0.0,0
