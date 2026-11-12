@@ -27,8 +27,9 @@ RESULTS_DIR = BASE_DIR / "experiments" / "results"
 
 
 
-def load_dataset(limit: int = None):
-    with open(DATASET_PATH, "r", encoding="utf-8") as f:
+def load_dataset(limit: int = None, dataset_path=None):
+    path = Path(dataset_path) if dataset_path else DATASET_PATH
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data[:limit] if limit else data
 
@@ -53,8 +54,8 @@ def load_existing_results(fresh: bool, raw_path: Path, provider: str, model: str
 
 
 def run(provider: str = None, limit: int = None, sleep_between_calls: float = 0.0,
-        fresh: bool = False, output_dir: str = None):
-    dataset = load_dataset(limit)
+        fresh: bool = False, output_dir: str = None, dataset_path: str = None):
+    dataset = load_dataset(limit, dataset_path)
     client = LLMClient(provider=provider)
 
     run_name = "".join(c if (c.isalnum() or c in "-_") else "_"
@@ -69,7 +70,8 @@ def run(provider: str = None, limit: int = None, sleep_between_calls: float = 0.
         print(f"Resuming: {len(completed_keys)} (sample, strategy) pairs already completed — skipping those.")
 
     print(f"Provider: {client.provider} | Model: {client.model}")
-    print(f"Samples: {len(dataset)} | Strategies: {list(STRATEGIES.keys())}")
+    n_clean = sum(1 for e in dataset if e.get("has_error", True) is False)
+    print(f"Samples: {len(dataset)} ({len(dataset) - n_clean} buggy, {n_clean} clean) | Strategies: {list(STRATEGIES.keys())}")
     total_possible = len(dataset) * len(STRATEGIES)
     remaining = total_possible - len(completed_keys)
     print(f"Total (sample, strategy) pairs: {total_possible} | Remaining to run: {remaining}")
@@ -148,8 +150,12 @@ if __name__ == "__main__":
                          help="Seconds to sleep between API calls (rate limiting)")
     parser.add_argument("--output-dir", default=None,
                          help="Directory for this run (default: experiments/runs/<provider>__<model>)")
+    parser.add_argument("--dataset", default=None,
+                         help="Dataset JSON to evaluate (default: data/generated_dataset.json; "
+                              "use data/dataset_with_clean.json to include the 10 clean samples)")
     parser.add_argument("--fresh", action="store_true",
                          help="Ignore any existing results and start completely from scratch")
     args = parser.parse_args()
 
-    run(provider=args.provider, limit=args.limit, sleep_between_calls=args.sleep, fresh=args.fresh, output_dir=args.output_dir)
+    run(provider=args.provider, limit=args.limit, sleep_between_calls=args.sleep, fresh=args.fresh, output_dir=args.output_dir,
+        dataset_path=args.dataset)

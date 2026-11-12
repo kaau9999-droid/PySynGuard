@@ -1,0 +1,5 @@
+strategy,n_samples,true_positives,false_negatives,true_negatives,false_positives,accuracy,precision,recall,f1_score,localization_accuracy,false_positive_rate,specificity,parse_failures
+cot,76,66,0,10,0,1.0,1.0,1.0,1.0,0.9545,0.0,1.0,0
+few_shot,76,66,0,10,0,1.0,1.0,1.0,1.0,0.9848,0.0,1.0,0
+role_based,76,65,1,10,0,0.9868,1.0,0.9848,0.9924,0.9692,0.0,1.0,0
+zero_shot,76,65,1,10,0,0.9868,1.0,0.9848,0.9924,0.9846,0.0,1.0,0
