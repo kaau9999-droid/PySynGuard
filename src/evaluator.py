@@ -50,8 +50,10 @@ def parse_llm_response(raw_text: str) -> dict:
 
 def evaluate_sample(dataset_entry: dict, strategy_name: str, raw_llm_response: str) -> dict:
     """
-    dataset_entry: one entry from data/generated_dataset.json
-        (has: sample_id, error_type_id, error_line, buggy_code, ...)
+    dataset_entry: one entry from data/generated_dataset.json or
+        data/dataset_with_clean.json
+        (has: sample_id, error_type_id, error_line, buggy_code, ...;
+         optional has_error, False for clean samples)
     strategy_name: e.g. "zero_shot"
     raw_llm_response: the exact text returned by LLMClient.generate()
 
@@ -60,12 +62,16 @@ def evaluate_sample(dataset_entry: dict, strategy_name: str, raw_llm_response: s
     parsed = parse_llm_response(raw_llm_response)
     parse_success = "_parse_error" not in parsed
 
+    # Older dataset files contain buggy samples only and have no "has_error"
+    # field, so a missing label means "buggy". Clean samples carry has_error=False.
+    gt_has_error = bool(dataset_entry.get("has_error", True))
+
     record = {
         "sample_id": dataset_entry["sample_id"],
         "source_file": dataset_entry["source_file"],
         "error_type_id": dataset_entry["error_type_id"],
         "strategy": strategy_name,
-        "ground_truth_has_error": True,  # every dataset entry is a buggy sample
+        "ground_truth_has_error": gt_has_error,
         "ground_truth_line": dataset_entry["error_line"],
         "parse_success": parse_success,
         "raw_response": raw_llm_response,
@@ -75,9 +81,13 @@ def evaluate_sample(dataset_entry: dict, strategy_name: str, raw_llm_response: s
         record["predicted_has_error"] = parsed["has_error"]
         record["predicted_line"] = parsed["error_line"]
         record["predicted_description"] = parsed["error_description"]
-        record["correct_detection"] = (parsed["has_error"] == True)
-        record["correct_localization"] = (
-            parsed["has_error"] and parsed["error_line"] == dataset_entry["error_line"]
+        # Correct verdict = the model's has_error agrees with the label
+        # (True for buggy samples, False for clean samples).
+        record["correct_detection"] = (parsed["has_error"] == gt_has_error)
+        # Localization is only defined for buggy samples that were flagged.
+        record["correct_localization"] = bool(
+            gt_has_error and parsed["has_error"]
+            and parsed["error_line"] == dataset_entry["error_line"]
         )
     else:
         record["predicted_has_error"] = None

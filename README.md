@@ -15,7 +15,7 @@ The included `experiments/results/` directory contains the original, **saved** G
 | CoT | 66 | 100% | 63/66 (95.45%) |
 | Role-based | 65 | 98.48% | 63/65 (96.92%) |
 
-**Interpretation:** Every experimental snippet is buggy, so there are no clean negative cases. Consequently **false-positive rate and specificity are undefined (N/A)** and the precision/F1 values are limited in interpretation. The original `summary_metrics.csv` historically encoded FPR as `0`, which is an undefined-denominator placeholder, **not a measured zero false-positive rate**. The dashboard presents it as N/A without changing the historical CSV. Python `ast.parse()` confirms that snippets do not parse; it does not independently validate the injected category/line. The single-snippet UI compares against the parser-reported line, while batch results compare against the injector-recorded line; these need not agree. Recorded responses do not prove that newly repeated runs will return the same predictions.
+**Interpretation:** Every snippet in this original run is buggy, so there are no clean negative cases. Consequently **false-positive rate and specificity are undefined (N/A)** and the precision/F1 values are limited in interpretation. The original `summary_metrics.csv` historically encoded FPR as `0`, which is an undefined-denominator placeholder, **not a measured zero false-positive rate**. The dashboard presents it as N/A without changing the historical CSV. Python `ast.parse()` confirms that snippets do not parse; it does not independently validate the injected category/line. The single-snippet UI compares against the parser-reported line, while batch results compare against the injector-recorded line; these need not agree. Recorded responses do not prove that newly repeated runs will return the same predictions.
 
 ## Repository contents
 
@@ -23,6 +23,7 @@ The included `experiments/results/` directory contains the original, **saved** G
  data/clean_samples/         10 small, syntactically valid Python source files
  data/error_types.json       Eight synthetic mutation types
  data/generated_dataset.json 66 saved corrupted snippets
+ data/dataset_with_clean.json 76 snippets: the 66 above + 10 clean files (has_error=false)
  src/error_injector.py       Recreate the generated dataset (seed 42)
  src/ground_truth_checker.py Python AST parser check
  src/prompting_strategies.py Four prompting strategies
@@ -80,6 +81,20 @@ New results are written by default under `experiments/runs/<provider>__<model>/`
 
 For a real evaluation, do **not** claim FPR or specificity without clean snippets. Failed/unparseable model responses are treated as unsuccessful predictions when computing metrics; they are recorded separately as parse failures. The historical results are not retroactively changed by these fixes.
 
+## Extended run with clean samples (false-positive rate)
+
+The original run cannot measure false alarms. `data/dataset_with_clean.json` adds the 10 clean source files as negative samples (`C001`–`C010`, `has_error: false`, `error_line: null`). The evaluator now reads this label, so a "no error" answer on a clean file counts as a true negative, and the summary reports specificity and FPR.
+
+To avoid repeating the 264 saved calls, copy the original results into the run folder; the runner then skips them and makes only the 40 new calls (10 clean samples × 4 strategies), using the same Groq model:
+
+```powershell
+mkdir experiments\runs\groq__openai_gpt-oss-120b
+copy experiments\results\raw_results.csv experiments\runs\groq__openai_gpt-oss-120b\
+.\.venv\Scripts\python.exe experiments/run_experiment.py --provider groq --dataset data/dataset_with_clean.json
+```
+
+To publish the extended run, copy the two CSV files from `experiments/runs/groq__openai_gpt-oss-120b/` to `experiments/results_with_clean/`. The dashboard then offers both saved runs. The original `experiments/results/` is left unchanged.
+
 ## Limitations and future work
 
-The dataset contains only synthetic errors from 10 handwritten source files; categories have unequal sample sizes and samples are related. The four prompts were compared using a single saved model/run with no negative samples or repeated-run variability analysis. No developer study, latency/cost benchmark, nor actual CI integration was evaluated. Useful extensions include independent clean-code cases, parser-vs-injection localization reporting, larger authentic projects, repeated evaluations, and an implemented pre-commit/CI benchmark.
+The dataset contains only synthetic errors from 10 handwritten source files; categories have unequal sample sizes and samples are related. The four prompts were compared using a single model with no repeated-run variability analysis, and the extended run has only 10 clean samples, so its false-positive estimate is coarse. No developer study, latency/cost benchmark, nor actual CI integration was evaluated. Useful extensions include more (and more varied) clean-code cases, parser-vs-injection localization reporting, larger authentic projects, repeated evaluations, and an implemented pre-commit/CI benchmark.

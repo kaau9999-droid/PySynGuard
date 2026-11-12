@@ -9,7 +9,8 @@ Run with:
 
 Two tabs:
     1. Try It Yourself  - paste/generate code, run one strategy, see the result
-    2. Experiment Dashboard - run/view the full 66-sample x 4-strategy comparison
+    2. Experiment Dashboard - view the saved runs (66 buggy samples, and the
+       optional 76-sample run that adds 10 clean samples)
 """
 
 import json
@@ -28,8 +29,7 @@ from ground_truth_checker import check_syntax          # noqa: E402
 from evaluator import parse_llm_response               # noqa: E402
 
 RESULTS_DIR = BASE_DIR / "experiments" / "results"
-RAW_RESULTS_PATH = RESULTS_DIR / "raw_results.csv"
-SUMMARY_PATH = RESULTS_DIR / "summary_metrics.csv"
+CLEAN_RESULTS_DIR = BASE_DIR / "experiments" / "results_with_clean"
 DATASET_PATH = BASE_DIR / "data" / "generated_dataset.json"
 
 st.set_page_config(page_title="PySynGuard", layout="wide")
@@ -106,7 +106,13 @@ with tab1:
 # TAB 2: Experiment Dashboard
 # ---------------------------------------------------------------------------
 with tab2:
-    st.subheader("Full experiment results (66 samples × 4 strategies)")
+    run_options = {"Original run: 66 buggy samples": RESULTS_DIR}
+    if (CLEAN_RESULTS_DIR / "summary_metrics.csv").exists():
+        run_options["Extended run: 66 buggy + 10 clean samples"] = CLEAN_RESULTS_DIR
+    run_label = st.radio("Saved run", list(run_options.keys()), horizontal=True)
+    SUMMARY_PATH = run_options[run_label] / "summary_metrics.csv"
+    RAW_RESULTS_PATH = run_options[run_label] / "raw_results.csv"
+    st.subheader(f"Experiment results ({run_label})")
 
     if not SUMMARY_PATH.exists():
         st.warning(
@@ -117,11 +123,13 @@ with tab2:
         summary_df = pd.read_csv(SUMMARY_PATH)
         raw_df = pd.read_csv(RAW_RESULTS_PATH)
 
-        st.caption("Historical saved Groq run — these figures are loaded from CSV; viewing does not rerun the LLM.")
+        st.caption("Saved Groq run — these figures are loaded from CSV; viewing does not rerun the LLM.")
         # No clean samples exist in this saved run: FPR is undefined,
         # although the historical CSV stores 0 as a placeholder.
-        if "false_positive_rate" in summary_df.columns and not (~raw_df["ground_truth_has_error"]).any():
-            summary_df["false_positive_rate"] = float("nan")
+        if not (~raw_df["ground_truth_has_error"].astype(bool)).any():
+            for col in ("false_positive_rate", "specificity"):
+                if col in summary_df.columns:
+                    summary_df[col] = float("nan")
         st.write("**Summary metrics by strategy:**")
         st.dataframe(summary_df.fillna("N/A"), width="stretch")
 

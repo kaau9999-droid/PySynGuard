@@ -1,0 +1,762 @@
+[
+  {
+    "sample_id": "S001",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b)\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "error_type_id": "missing_colon",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S002",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b:\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S003",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\nreturn a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S004",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint result\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 10,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S005",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult  add(5, 3)\nprint(result)\n",
+    "error_type_id": "missing_equals",
+    "error_line": 9,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S006",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b)\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S007",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x)\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "error_type_id": "missing_colon",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S008",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5\ncheck_number(0)\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 11,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S009",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\nprint(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S010",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print \"zero\"\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S011",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive)\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S012",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5))\ncheck_number(0)\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 11,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S013",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3\n    print(i)\n    i += 1\n",
+    "error_type_id": "missing_colon",
+    "error_line": 11,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S014",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S015",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\ntotal += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 5,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S016",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint f\"Total: {total}, Average: {average}\"\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 8,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S017",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average})\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 8,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S018",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total +*= n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "invalid_operator",
+    "error_line": 5,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S019",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers))\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S020",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self)\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "error_type_id": "missing_colon",
+    "error_line": 9,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S021",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self:\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S022",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\ndef area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S023",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint rect.perimeter()\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 15,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S024",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect  Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "error_type_id": "missing_equals",
+    "error_line": 13,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S025",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter()))\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 15,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S026",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "missing_colon",
+    "error_line": 2,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S027",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2)\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 13,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S028",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\nelse:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S029",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint safe_divide(10, 2)\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 13,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S030",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero)\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 5,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S031",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result  a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "missing_equals",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S032",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0)))\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 14,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S033",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items()\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "missing_colon",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S034",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S035",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\nprint(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S036",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint squares\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 9,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S037",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar: 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S038",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares  [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "missing_equals",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S039",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80})\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 4,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S040",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items()\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "missing_colon",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S041",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items(:\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S042",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\nreturn f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 2,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S043",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint sum_all(1, 2, 3, bonus=10)\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 14,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S044",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 13,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S045",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total +*= value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "invalid_operator",
+    "error_line": 8,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S046",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total  sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "missing_equals",
+    "error_line": 6,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S047",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\")\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 2,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S048",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n)\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "missing_colon",
+    "error_line": 11,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S049",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\"\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S050",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\nreturn n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 12,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S051",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint compute_square(6)\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 15,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S052",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.)\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 5,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S053",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result  func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "missing_equals",
+    "error_line": 4,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S054",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs))\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 4,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S055",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "missing_colon",
+    "error_line": 1,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S056",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\"\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S057",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\nprint(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "bad_indentation",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S058",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print \"Log started\"\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S059",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended)\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S060",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\"))\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 3,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S061",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius)\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "missing_colon",
+    "error_line": 5,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S062",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2,\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "unmatched_bracket",
+    "error_line": 11,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S063",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint json.dumps(stats, indent=2)\n",
+    "error_type_id": "missing_parenthesis_call",
+    "error_line": 16,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S064",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius: radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "unterminated_string",
+    "error_line": 9,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S065",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference  2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "missing_equals",
+    "error_line": 7,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "S066",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,)\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "dangling_comma_paren",
+    "error_line": 9,
+    "is_valid_check": false,
+    "has_error": true
+  },
+  {
+    "sample_id": "C001",
+    "source_file": "sample_01.py",
+    "clean_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "buggy_code": "def add(a, b):\n    return a + b\n\n\ndef subtract(a, b):\n    return a - b\n\n\nresult = add(5, 3)\nprint(result)\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C002",
+    "source_file": "sample_02.py",
+    "clean_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "buggy_code": "def check_number(x):\n    if x > 0:\n        print(\"positive\")\n    elif x < 0:\n        print(\"negative\")\n    else:\n        print(\"zero\")\n\n\ncheck_number(10)\ncheck_number(-5)\ncheck_number(0)\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C003",
+    "source_file": "sample_03.py",
+    "clean_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "buggy_code": "numbers = [1, 2, 3, 4, 5]\ntotal = 0\n\nfor n in numbers:\n    total += n\n\naverage = total / len(numbers)\nprint(f\"Total: {total}, Average: {average}\")\n\ni = 0\nwhile i < 3:\n    print(i)\n    i += 1\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C004",
+    "source_file": "sample_04.py",
+    "clean_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "buggy_code": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n\n    def area(self):\n        return self.width * self.height\n\n    def perimeter(self):\n        return 2 * (self.width + self.height)\n\n\nrect = Rectangle(4, 5)\nprint(rect.area())\nprint(rect.perimeter())\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C005",
+    "source_file": "sample_05.py",
+    "clean_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "buggy_code": "def safe_divide(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"Cannot divide by zero\")\n        return None\n    else:\n        return result\n    finally:\n        print(\"Division attempted\")\n\n\nprint(safe_divide(10, 2))\nprint(safe_divide(10, 0))\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C006",
+    "source_file": "sample_06.py",
+    "clean_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "buggy_code": "student_scores = {\"Ali\": 90, \"Sara\": 85, \"Omar\": 78}\n\nsquares = [x * x for x in range(10)]\npassed = {name: score for name, score in student_scores.items() if score >= 80}\n\nfor name, score in passed.items():\n    print(f\"{name}: {score}\")\n\nprint(squares)\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C007",
+    "source_file": "sample_07.py",
+    "clean_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "buggy_code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n\ndef sum_all(*args, **kwargs):\n    total = sum(args)\n    for key, value in kwargs.items():\n        total += value\n    return total\n\n\nprint(greet(\"Asaad\"))\nprint(greet(\"Asaad\", greeting=\"Hi\"))\nprint(sum_all(1, 2, 3, bonus=10))\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C008",
+    "source_file": "sample_08.py",
+    "clean_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "buggy_code": "def timer(func):\n    def wrapper(*args, **kwargs):\n        print(\"Starting...\")\n        result = func(*args, **kwargs)\n        print(\"Finished.\")\n        return result\n    return wrapper\n\n\n@timer\ndef compute_square(n):\n    return n ** 2\n\n\nprint(compute_square(6))\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C009",
+    "source_file": "sample_09.py",
+    "clean_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "buggy_code": "class Logger:\n    def __enter__(self):\n        print(\"Log started\")\n        return self\n\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        print(\"Log ended\")\n\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\n\nwith Logger() as logger:\n    logger.log(\"Processing data\")\n    logger.log(\"Done\")\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  },
+  {
+    "sample_id": "C010",
+    "source_file": "sample_10.py",
+    "clean_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "buggy_code": "import math\nimport json\n\n\ndef circle_stats(radius):\n    area = math.pi * radius ** 2\n    circumference = 2 * math.pi * radius\n    return {\n        \"radius\": radius,\n        \"area\": round(area, 2),\n        \"circumference\": round(circumference, 2),\n    }\n\n\nstats = circle_stats(5)\nprint(json.dumps(stats, indent=2))\n",
+    "error_type_id": "none",
+    "error_line": null,
+    "is_valid_check": true,
+    "has_error": false
+  }
+]

@@ -32,7 +32,7 @@ def compute_metrics(records: list) -> dict:
         if not r.get("parse_success", True):
             parse_failures += 1
             # Count an unparseable response as a failed verdict, not as a
-            # silently excluded sample. Dataset currently contains only buggy cases.
+            # silently excluded sample (a miss for buggy code, a false alarm for clean code).
             if r["ground_truth_has_error"]:
                 fn += 1
             else:
@@ -62,6 +62,8 @@ def compute_metrics(records: list) -> dict:
     recall = tp / (tp + fn) if (tp + fn) else 0.0
     f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0
     localization_accuracy = (correct_localization / localizable_cases) if localizable_cases else 0.0
+    # Specificity (true-negative rate) needs clean samples; undefined otherwise.
+    specificity = tn / (tn + fp) if (tn + fp) else None
     false_positive_rate = fp / (fp + tn) if (fp + tn) else None
 
     return {
@@ -77,6 +79,7 @@ def compute_metrics(records: list) -> dict:
         "f1_score": round(f1, 4),
         "localization_accuracy": round(localization_accuracy, 4),
         "false_positive_rate": round(false_positive_rate, 4) if false_positive_rate is not None else None,
+        "specificity": round(specificity, 4) if specificity is not None else None,
     }
 
 
@@ -97,7 +100,9 @@ def summarize_by_strategy(raw_results_df: pd.DataFrame) -> pd.DataFrame:
         metrics["strategy"] = strategy
         summaries.append(metrics)
 
-    cols = ["strategy", "n_samples", "accuracy", "precision", "recall", "f1_score",
-            "localization_accuracy", "false_positive_rate", "parse_failures"]
+    cols = ["strategy", "n_samples", "true_positives", "false_negatives",
+            "true_negatives", "false_positives", "accuracy", "precision", "recall",
+            "f1_score", "localization_accuracy", "false_positive_rate", "specificity",
+            "parse_failures"]
     df = pd.DataFrame(summaries)
     return df[cols].sort_values("f1_score", ascending=False).reset_index(drop=True)
