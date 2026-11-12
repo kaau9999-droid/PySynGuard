@@ -17,6 +17,30 @@ The included `experiments/results/` directory contains the original, **saved** G
 
 **Interpretation:** Every snippet in this original run is buggy, so there are no clean negative cases. Consequently **false-positive rate and specificity are undefined (N/A)** and the precision/F1 values are limited in interpretation. The original `summary_metrics.csv` historically encoded FPR as `0`, which is an undefined-denominator placeholder, **not a measured zero false-positive rate**. The dashboard presents it as N/A without changing the historical CSV. Python `ast.parse()` confirms that snippets do not parse; it does not independently validate the injected category/line. The single-snippet UI compares against the parser-reported line, while batch results compare against the injector-recorded line; these need not agree. Recorded responses do not prove that newly repeated runs will return the same predictions.
 
+### Extended run with clean samples
+
+`experiments/results_with_clean/` adds 40 evaluations of the 10 clean snippets (same model, prompts and temperature; the 264 original responses were reused, not re-requested).
+
+| Prompt strategy | True negatives / 10 | False positives | Specificity | FPR |
+|---|---:|---:|---:|---:|
+| Zero-shot | 10 | 0 | 1.000 | 0.000 |
+| Few-shot | 10 | 0 | 1.000 | 0.000 |
+| CoT | 10 | 0 | 1.000 | 0.000 |
+| Role-based | 10 | 0 | 1.000 | 0.000 |
+
+No strategy flagged correct code as erroneous. Ten clean snippets is a small sample, so this does not show that the false-alarm rate is zero in general.
+
+## For reviewers: what works without an API key
+
+| What | API key needed? |
+|---|---|
+| Experiment Dashboard (both saved runs) | No |
+| Try It Yourself with the `mock` provider | No (simulated answers, for testing the interface only) |
+| Unit tests: `python -m unittest discover -s tests` | No |
+| Try It Yourself with `groq`, or a new experiment run | Yes, your own free Groq key |
+
+A new live run is not guaranteed to return exactly the same answers as the saved run, even at temperature 0, because hosted LLM outputs can vary between calls and model updates. The saved CSV files are the evidence reported in the course report.
+
 ## Repository contents
 
 ```
@@ -31,7 +55,8 @@ The included `experiments/results/` directory contains the original, **saved** G
  src/evaluator.py           JSON response validation and scoring
  src/metrics.py             Aggregate evaluation metrics
  experiments/run_experiment.py
- experiments/results/       ORIGINAL SAVED CSVs (do not overwrite)
+ experiments/results/       ORIGINAL SAVED CSVs: 66 buggy samples (do not overwrite)
+ experiments/results_with_clean/ EXTENDED RUN CSVs: 66 buggy + 10 clean samples
  notebooks/                 Analysis notebook and plots
  ui/app.py                  Streamlit UI and historical experiment dashboard
 ```
@@ -44,6 +69,14 @@ From the project root (where `requirements.txt` is located):
 py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m streamlit run ui/app.py
+```
+
+**Windows long-path note:** if `pip install` fails with `No such file or directory` and a hint about *Windows Long Path support*, the project folder path is too long. Either move the project to a short folder (e.g. `C:\pysynguard`), or create the environment in a short path and use it from the project folder:
+
+```powershell
+py -m venv C:\pysg
+C:\pysg\Scripts\python.exe -m pip install -r requirements.txt
+C:\pysg\Scripts\python.exe -m streamlit run ui/app.py
 ```
 
 Open `http://localhost:8501`. In **Try It Yourself**, choose `groq` to use a real Groq model or `mock` for offline interface testing. The latter is simulated and **must never be represented as real LLM evaluation evidence**. The **Experiment Dashboard** displays the supplied historical CSV results, and does not initiate any API calls.
